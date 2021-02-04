@@ -1,0 +1,27 @@
+html {
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  font-size: 18px;
+  font-weight: 400;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
+*,
+*::before,
+*::after {
+  -webkit-box-sizing: inherit;
+          box-sizing: inherit;
+  padding: 0;
+  margin: 0;
+}
+
+body {
+  background-image: url("../images/bg-mobile-light.jpg");
+  background-repeat: no-repeat;
+}
+
+button {
+  background: none;
+  border: none;
+}
+/*# sourceMappingURL=main.css.map */
