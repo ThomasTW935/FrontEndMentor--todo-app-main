@@ -18,6 +18,8 @@ html {
 button {
   background: none;
   border: none;
+  color: #9394a5;
+  cursor: pointer;
 }
 
 body {
@@ -70,42 +72,50 @@ body {
 
 .todo__create {
   width: 100%;
+  padding: 0 0.85rem;
+  background: white;
+  border-radius: 6px;
 }
 
 .todo__create input {
   font-size: 0.7rem;
   width: 100%;
-  padding: 0.65rem 0.85rem;
   border-radius: 6px;
   border: 0;
+  padding: 0.65rem 0;
 }
 
 .todo__listContainer {
-  background: white;
   width: 100%;
-  border-radius: 6px;
+  font-size: 0.7rem;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
   -webkit-box-shadow: 0 12px 12px 0px #e4e5f1;
           box-shadow: 0 12px 12px 0px #e4e5f1;
-  font-size: 0.7rem;
-  display: -ms-grid;
-  display: grid;
-  -ms-grid-rows: 1fr 10%;
-  -ms-grid-columns: (1fr)[2];
-      grid-template: 1fr 10%/repeat(2, 1fr);
   padding: 0 0.85rem;
+  margin-bottom: 4.5rem;
+  background: white;
+  border-radius: 6px;
+  position: relative;
 }
 
 .todo__list {
   -ms-grid-column: 1;
   -ms-grid-column-span: 2;
   grid-column: 1/3;
+  color: black;
 }
 
 .todo__list li {
-  padding: 0.65rem 0;
   width: 100%;
   border-radius: 6px;
   border: 0;
+  padding: 0.65rem 0;
   list-style: none;
   gap: 1rem;
   display: -webkit-box;
@@ -131,8 +141,12 @@ body {
 }
 
 .todo__list li label input:checked ~ span {
+  background: -webkit-gradient(linear, left top, left bottom, from(#57ddff), to(#c058f3));
+  background: linear-gradient(#57ddff, #c058f3);
+}
+
+.todo__list li label input:checked ~ span::before {
   background-image: url("../images/icon-check.svg");
-  background-color: linear-gradient(#57ddff, #c058f3);
 }
 
 .todo__list li label span {
@@ -145,7 +159,95 @@ body {
   border-radius: 50%;
 }
 
+.todo__list li label span::before {
+  content: "";
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  top: 0;
+  left: 0;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
 .todo__list li button {
   margin-left: auto;
+}
+
+.todo__item--active {
+  text-decoration: line-through;
+  color: #9394a5;
+}
+
+.todo__otherInfo {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.todo__itemsLeft {
+  text-transform: capitalize;
+  color: #9394a5;
+  border-radius: 6px;
+  border: 0;
+  padding: 0.65rem 0;
+}
+
+.todo__clear {
+  margin-left: auto;
+  font-size: inherit;
+  color: #9394a5;
+  border-radius: 6px;
+  border: 0;
+  padding: 0.65rem 0;
+}
+
+.todo__status {
+  margin: 1rem;
+  -ms-grid-row: 2;
+  -ms-grid-row-span: 1;
+  grid-row: 2/3;
+  -ms-grid-column: 1;
+  -ms-grid-column-span: 2;
+  grid-column: 1/3;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: Center;
+      -ms-flex-pack: Center;
+          justify-content: Center;
+  position: absolute;
+  bottom: -4.5rem;
+  left: -1rem;
+  width: 100%;
+  background: white;
+  -webkit-box-shadow: 0 12px 12px 0px #e4e5f1;
+          box-shadow: 0 12px 12px 0px #e4e5f1;
+  border-radius: 6px;
+  border: 0;
+  padding: 0.65rem 0;
+}
+
+.todo__status label {
+  font-size: 0.9rem;
+}
+
+.todo__status label input {
+  opacity: 0;
+  position: absolute;
+  height: 0;
+  width: 0;
+}
+
+.todo__status label input:checked ~ span {
+  color: #3a7bfd;
+}
+
+.todo__status label span {
+  cursor: pointer;
+  padding: 0.5em 0.75em;
 }
 /*# sourceMappingURL=main.css.map */

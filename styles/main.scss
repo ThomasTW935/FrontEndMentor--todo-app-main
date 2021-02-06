@@ -1,3 +1,13 @@
+$veryLightGray: hsl(0, 0%, 98%);
+$veryLightGrayishBlue: hsl(236, 33%, 92%);
+$lightGrayishBlue: hsl(233, 11%, 84%);
+$darkGrayishBlue: hsl(236, 9%, 61%);
+$veryDarkGrayishBlue: hsl(235, 19%, 35%);
+$brightBlue: hsl(220, 98%, 61%);
+$checkBackground: linear-gradient hsl(192, 100%, 67%) to hsl(280, 87%, 65%);
+
+$statusMargin: 4.5rem;
+
 html {
   box-sizing: border-box;
   font-size: 18px;
@@ -15,6 +25,8 @@ html {
 button {
   background: none;
   border: none;
+  color: $darkGrayishBlue;
+  cursor: pointer;
 }
 
 @import "./_mobile";
