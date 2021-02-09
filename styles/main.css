@@ -157,6 +157,7 @@ body {
   width: 25px;
   border: 1px solid #d2d3db;
   border-radius: 50%;
+  cursor: pointer;
 }
 
 .todo__list li label span::before {
@@ -199,10 +200,17 @@ body {
 .todo__clear {
   margin-left: auto;
   font-size: inherit;
-  color: #9394a5;
+  font-weight: bold;
+  outline: none;
+  opacity: 0.5;
+  cursor: pointer;
   border-radius: 6px;
   border: 0;
   padding: 0.65rem 0;
+}
+
+.todo__clear:hover, .todo__clear:active {
+  opacity: 1;
 }
 
 .todo__status {
@@ -244,10 +252,16 @@ body {
 
 .todo__status label input:checked ~ span {
   color: #3a7bfd;
+  opacity: 1;
 }
 
 .todo__status label span {
-  cursor: pointer;
   padding: 0.5em 0.75em;
+  opacity: 0.5;
+  cursor: pointer;
+}
+
+.todo__status label span:hover, .todo__status label span:active {
+  opacity: 1;
 }
 /*# sourceMappingURL=main.css.map */

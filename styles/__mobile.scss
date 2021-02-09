@@ -103,6 +103,7 @@ body {
           width: 25px;
           border: 1px solid $lightGrayishBlue;
           border-radius: 50%;
+          cursor: pointer;
           &::before {
             content: "";
             position: absolute;
@@ -133,11 +134,21 @@ body {
     color: $darkGrayishBlue;
     @include generalListStyle;
   }
+  @mixin buttonStyle() {
+    opacity: 0.5;
+    cursor: pointer;
 
+    &:hover,
+    &:active {
+      opacity: 1;
+    }
+  }
   &__clear {
     margin-left: auto;
     font-size: inherit;
-    color: $darkGrayishBlue;
+    font-weight: bold;
+    outline: none;
+    @include buttonStyle();
     @include generalListStyle;
   }
   &__status {
@@ -163,10 +174,11 @@ body {
       }
       input:checked ~ span {
         color: $brightBlue;
+        opacity: 1;
       }
       span {
-        cursor: pointer;
         padding: 0.5em 0.75em;
+        @include buttonStyle();
       }
     }
   }

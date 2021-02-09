@@ -20,7 +20,6 @@ let todos = [
 init()
 
 function init() {
-
   renderTodos(todos)
   setStatusEvents()
   setListItemStatus()
@@ -36,6 +35,10 @@ function renderTodos(todos) {
   })
   setRemoveListItemEvent()
   setListItemStatus()
+
+  let clearButton = document.querySelector('.todo__clear')
+  clearButton.addEventListener('click', clearCompletedTodos)
+
 }
 function renderTodo(todo) {
   let item = document.createElement('li')
@@ -88,8 +91,7 @@ function setObjectStatus(id, checked) {
     if (todo.id == id) {
       todo.status = (checked) ? 1 : 0
       removeListItems()
-      renderTodos(todos)
-      console.log(123)
+      setStatusEvents()
     }
   })
 }
@@ -124,4 +126,8 @@ function setRemoveListItemEvent() {
   removeButtons.forEach(removeButton => [
     removeButton.addEventListener('click', () => removeListItem(removeButton))
   ])
+}
+function clearCompletedTodos() {
+  todos = filterTodos(todos, 0)
+  setStatusEvents()
 }
