@@ -23,6 +23,7 @@ function init() {
   renderTodos(todos)
   setStatusEvents()
   setListItemStatus()
+  formSubmit()
 }
 function renderTodos(todos) {
   let todoList = document.querySelector('.todo__list')
@@ -130,4 +131,24 @@ function setRemoveListItemEvent() {
 function clearCompletedTodos() {
   todos = filterTodos(todos, 0)
   setStatusEvents()
+}
+
+function formSubmit() {
+  let form = document.querySelector('.todo__create')
+  form.addEventListener('submit', () => {
+    event.preventDefault()
+    let children = form.children
+    let newTodo = {}
+    for (let i = 0; i < children.length; i++) {
+      let name = children[i].name
+      let value = children[i].value
+      if (name == 'status') value = (children[i].checked) ? 1 : 0
+      newTodo[name] = value
+      console.log(`${name}: ${value}`)
+    }
+    console.log(newTodo)
+    todos.push(newTodo)
+    setStatusEvents()
+    console.log(todos)
+  })
 }

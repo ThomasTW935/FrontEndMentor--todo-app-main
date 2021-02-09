@@ -34,9 +34,10 @@
       <h1>Todo</h1>
       <button><img src='./images/icon-moon.svg'></button>
     </section>
-    <section class='todo__create'>
-      <input type='text' placeholder="Create a new todo">
-    </section>
+    <form class='todo__create'>
+      <input name='todo' type='text' placeholder="Create a new todo" required>
+      <input name='status' type="checkbox">
+    </form>
     <section class='todo__listContainer'>
       <ul class='todo__list'>
       </ul>
