@@ -139,16 +139,15 @@ function formSubmit() {
     event.preventDefault()
     let children = form.children
     let newTodo = {}
+    newTodo['id'] = Date.now()
     for (let i = 0; i < children.length; i++) {
       let name = children[i].name
       let value = children[i].value
       if (name == 'status') value = (children[i].checked) ? 1 : 0
       newTodo[name] = value
-      console.log(`${name}: ${value}`)
     }
-    console.log(newTodo)
     todos.push(newTodo)
-    setStatusEvents()
-    console.log(todos)
+    removeListItems()
+    renderTodos(todos)
   })
 }

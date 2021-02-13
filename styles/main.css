@@ -72,17 +72,73 @@ body {
 
 .todo__create {
   width: 100%;
-  padding: 0 0.85rem;
-  background: white;
-  border-radius: 6px;
-}
-
-.todo__create input {
-  font-size: 0.7rem;
-  width: 100%;
   border-radius: 6px;
   border: 0;
   padding: 0.65rem 0;
+  list-style: none;
+  gap: 1rem;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  background: White;
+  font-size: 0.9rem;
+  padding: 0.65rem;
+}
+
+.todo__create label {
+  position: relative;
+  height: 1rem;
+  width: 1rem;
+}
+
+.todo__create label input {
+  position: absolute;
+  cursor: pointer;
+  height: 0;
+  width: 0;
+  opacity: 0;
+}
+
+.todo__create label input:checked ~ span {
+  background: -webkit-gradient(linear, left top, left bottom, from(#57ddff), to(#c058f3));
+  background: linear-gradient(#57ddff, #c058f3);
+}
+
+.todo__create label input:checked ~ span::before {
+  background-image: url("../images/icon-check.svg");
+}
+
+.todo__create label span {
+  height: 25px;
+  width: 25px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  -webkit-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
+  border: 1px solid #d2d3db;
+  border-radius: 50%;
+  cursor: pointer;
+}
+
+.todo__create label span::before {
+  content: "";
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  top: 0;
+  left: 0;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+.todo__inputText {
+  background: 0;
+  border: none;
+  outline: transparent;
 }
 
 .todo__listContainer {
@@ -97,7 +153,7 @@ body {
           flex-direction: column;
   -webkit-box-shadow: 0 12px 12px 0px #e4e5f1;
           box-shadow: 0 12px 12px 0px #e4e5f1;
-  padding: 0 0.85rem;
+  padding: 0 0.65rem;
   margin-bottom: 4.5rem;
   background: white;
   border-radius: 6px;
@@ -150,11 +206,13 @@ body {
 }
 
 .todo__list li label span {
-  position: absolute;
-  top: 0;
-  left: 0;
   height: 25px;
   width: 25px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  -webkit-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
   border: 1px solid #d2d3db;
   border-radius: 50%;
   cursor: pointer;
