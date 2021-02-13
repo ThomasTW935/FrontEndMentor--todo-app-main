@@ -68,6 +68,7 @@ function renderTodo(todo) {
   checkBoxLabel.append(checkBoxSpan)
 
   let className = (todo.status) ? 'todo__item--active' : 'todo__item'
+  item.setAttribute('draggable', true)
   item.classList.add(className)
   item.append(checkBoxLabel)
   item.append(p)

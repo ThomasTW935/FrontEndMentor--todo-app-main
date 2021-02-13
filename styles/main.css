@@ -43,7 +43,7 @@ body {
           align-items: center;
   height: 90%;
   padding-top: 1.5rem;
-  gap: 1rem;
+  gap: 1.5rem;
 }
 
 .todo__header {
@@ -76,7 +76,7 @@ body {
   border: 0;
   padding: 0.65rem 0;
   list-style: none;
-  gap: 1rem;
+  gap: 1.2rem;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -173,7 +173,7 @@ body {
   border: 0;
   padding: 0.65rem 0;
   list-style: none;
-  gap: 1rem;
+  gap: 1.2rem;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -295,9 +295,6 @@ body {
   border-radius: 6px;
   border: 0;
   padding: 0.65rem 0;
-}
-
-.todo__status label {
   font-size: 0.9rem;
 }
 
@@ -321,5 +318,31 @@ body {
 
 .todo__status label span:hover, .todo__status label span:active {
   opacity: 1;
+}
+
+@media screen and (min-width: 1440px) {
+  body {
+    background-image: url("../images/bg-desktop-light.jpg");
+    position: relative;
+  }
+  .todo {
+    width: 35%;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    -webkit-transform: translate(-50%, -50%);
+            transform: translate(-50%, -50%);
+  }
+  .todo__otherInfo {
+    -webkit-box-shadow: 0 12px 12px 0px #e4e5f1;
+            box-shadow: 0 12px 12px 0px #e4e5f1;
+  }
+  .todo__itemsLeft, .todo__clear {
+    width: 100%;
+  }
+  .todo__status {
+    font-size: inherit;
+    position: static;
+  }
 }
 /*# sourceMappingURL=main.css.map */
